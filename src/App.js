@@ -21,7 +21,8 @@ open-sourced on Github
 </a>
 </footer>
 </div>
-</div> );
+</div>
+ );
 
 }
 
