@@ -33,11 +33,15 @@ className="btn btn-primary w-100"/>
 <div className="row">
 
     <div className="col-6">
-        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="Mostyl cloudy"/>
+         
+        <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+         alt="Mostyl cloudy"/>
+         
+
        <span className="temperature">21</span> 
        <span className="unit">°C|F</span>
-   </div>
-     
+ </div>
+  
     <div className="col-3">
         <ul>
             <li>
@@ -54,10 +58,9 @@ Wind: 9 mp/h
         </ul>
     </div>
      </div>
-      </div>
- 
-
-   
+     
+    </div>
+  
    
 
        
