@@ -7,11 +7,10 @@ function App() {
         <div className="container">
        
 <footer>
- <Weather />
-This project was coded by <a href="https://www.linkedin.com/in/natasha-p-9a3621173/" target="_blank">Natasha Pinder</a> and is {" "}
+ <Weather defaultCity="London" />
+This project was coded by{" "} <a href="https://www.linkedin.com/in/natasha-p-9a3621173/" target="_blank">Natasha Pinder</a> and is {" "}
 <a href="https://github.com/natashapinder00/react-weather-app"
-target="_blank"
-className="">
+target="_blank">
 
 open-sourced
 </a>
