@@ -14,10 +14,11 @@
 }
 
 .Weather h1 {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 100;
   margin: 20px 0 0 0;
   line-height: 29px;
+  margin-bottom: 5px;
 }
 
 .Weather ul {
@@ -44,4 +45,12 @@
   font-size: 64px;
   line-height: 64px;
   font-weight: 400;
+}
+
+.Weather .unit {
+  font-weight: 400;
+  color: rgb(33, 33, 33);
+  font-size: 16px;
+  position: relative;
+  top: -32px;
 }
