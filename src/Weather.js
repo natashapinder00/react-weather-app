@@ -32,7 +32,7 @@ if (weatherData.ready) {
              <input type="search" 
              placeholder="Enter a city..." 
              className="Form-control" 
-             autofocus="on"/>
+             autoFocus="on"/>
 
              </div> 
 <div className="col-3">
