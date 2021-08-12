@@ -6,14 +6,11 @@ import "./Weather.css";
 
 export default function Weather(props) {
 
-const [weatherData, setWeatherData] = useState({ ready: false })
-;
-
+const [weatherData, setWeatherData] = useState({ ready: false });
+const [city, setCity] = useState(props.defaultCity);
 function handleResponse(response) {  
-    console.log(response.data);
-
-setWeatherData({
     
+setWeatherData({
     ready: true,
     temperature: response.data.main.temp,
     humidity: response.data.main.humidity,
@@ -22,27 +19,47 @@ setWeatherData({
     description: response.data.weather[0].description,
     iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png", 
     wind: response.data.wind.speed,
-    city: response.data.name,
+    city: response.data.name
     });
 }
+
+function search() {  
+    const apiKey = "34a5c6ae07d9e697fd2de9c507a9a671";
+    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);    
+}
+
+
+function handleSubmit(event) {
+    event.preventDefualt();
+    search();
+}
+
+function handleCityChange(event) {
+    setCity(event.target.value);
+   
+}
+
 
 if (weatherData.ready) {
         return (  
         <div className="Weather">
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="row">
                 <div className="col-9">
-
-             <input type="search" 
-             placeholder="Enter a city..." 
-             className="Form-control" 
-             autoFocus="on"/>
-
+                    <input
+                    type="search"
+                    placeholder="Enter a city..."
+                    className="Form-control"
+                    autoFocus="on"
+                    onChange={handleCityChange}
+             />
              </div> 
-<div className="col-3">
-<input type="submit"
-value="Search"
-className="btn btn-primary w-100"/>
+             <div className="col-3">
+                 <input 
+                 type="submit"
+                 value="Search"
+                 className="btn btn-primary w-100"/>
 </div>
     </div>    
       </form>
@@ -53,12 +70,8 @@ className="btn btn-primary w-100"/>
  
     );
 
-} else {
-
-    const apiKey = "d2b8a0db5e85065ca5e0d9c6fb59f04a";
-    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
-
+} else { 
+    search();
     return "Loading...";
 
 }

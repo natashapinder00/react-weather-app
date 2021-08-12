@@ -9,8 +9,7 @@ export default function WeatherInfo(props) {
 <li>
     <FormattedDate date={props.data.date}/>
 </li>
-<li className="text-capitalize">
-    {props.data.description}</li>
+<li className="text-capitalize">{props.data.description}</li>
 </ul>
 
 <div className="row mt-3">
@@ -26,6 +25,7 @@ export default function WeatherInfo(props) {
        <span className="unit">°C|F</span>
  </div>
   
+  
     <div className="col-3">
         <ul>
             <li>Precipitation: {props.data.precipitation}</li>
@@ -36,6 +36,6 @@ export default function WeatherInfo(props) {
         </ul>
         </div>
         </div>
-</div> 
+        </div> 
     );
 }
