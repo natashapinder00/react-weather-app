@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 import "./Weather.css";
 
 
@@ -22,7 +22,7 @@ setWeatherData({
     description: response.data.weather[0].description,
     iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png", 
     wind: response.data.wind.speed,
-    city: response.data.name
+    city: response.data.name,
     });
 }
 
@@ -45,42 +45,11 @@ value="Search"
 className="btn btn-primary w-100"/>
 </div>
     </div>    
-      
-    </form>
+      </form>
 
-<h1>{weatherData.city}</h1>
-<ul>
-<li>
-    <FormattedDate date={weatherData.date}/>
-</li>
-<li className="text-capitalize">
-    {weatherData.description}</li>
-</ul>
+<WeatherInfo data={weatherData} />
 
-<div className="row mt-3">
-
-    <div className="col-6">
-         
-        <img 
-        src={weatherData.iconUrl}
-        alt={weatherData.description}/>
-         
-
-       <span className="temperature">{Math.round(weatherData.temperature)}</span> 
-       <span className="unit">°C|F</span>
  </div>
-  
-    <div className="col-3">
-        <ul>
-            <li>Precipitation: {weatherData.precipitation}</li>
-              <li>Humidity: {weatherData.humidity}%</li>
-              <li>Wind: {weatherData.wind} km/h</li>
-
-           
-        </ul>
-        </div>
-        </div>
-        </div>
  
     );
 
