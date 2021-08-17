@@ -16,7 +16,7 @@ function handleResponse(response) {
     humidity: response.data.main.humidity,
     date: new Date(response.data.dt * 1000),
     description: response.data.weather[0].description,
-    icon: response.data.useState,
+    icon: response.data.weather[0].icon,
     wind: response.data.wind.speed,
     city: response.data.name
     });
@@ -30,7 +30,7 @@ function search() {
 
 
 function handleSubmit(event) {
-    event.preventDefualt();
+    event.preventDefault();
     search();
 }
 
