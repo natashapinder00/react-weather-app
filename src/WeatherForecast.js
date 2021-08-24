@@ -8,8 +8,8 @@ export default function WeatherForecast(props) {
     let [forecast, setForecast] = useState(null);
 
     function handleResponse(response) {
-    console.log(response.data);
-    setForecast(response.data.daily);
+        setForecast(response.data.daily);
+        setLoaded(true);
     }
 
     console.log(props);
@@ -19,12 +19,12 @@ export default function WeatherForecast(props) {
                 <div className="WeatherForecast">
                      <div className="row"> 
                      <div className="col">
-                         <div className="WeatherForecast-day"> Thu </div>
+                         <div className="WeatherForecast-day">{forecast[0].dt}</div>
         
-         <WeatherIcon code="01d" size={36} />
+         <WeatherIcon code={forecast[0].weather[0].icon} size={36} />
          <div className="WeatherForecast-temperature">
-             <span className="WeatherForecast-temperature-max">19°</span>
-              <span className="WeatherForecast-temperature-min">10°</span>
+             <span className="WeatherForecast-temperature-max">{forecast[0].temp.max}°</span>
+              <span className="WeatherForecast-temperature-min">{forecast[0].temp.min}°</span>
              
  </div>
  </div>
@@ -32,11 +32,9 @@ export default function WeatherForecast(props) {
         </div>
     );
 
-   
-
 } else { 
     
-         let apiKey = "34a5c6ae07d9e697fd2de9c507a9a671";
+    let apiKey = "30d43a24fd1c789e7aa41dc8c88143f5";
     let longitude = props.coordinates.lon;
     let latitude = props.coordinates.lat;  
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&untits=metric`;
