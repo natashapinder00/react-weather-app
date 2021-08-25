@@ -21,9 +21,9 @@
 }
 
 .Weather ul {
-  margin-bottom: 5px;
-  margin-left: 2px;
   padding: 0;
+  margin-bottom: 5px;
+  margin-top: 10px;
 }
 
 .Weather li {
@@ -53,5 +53,5 @@
   font-size: 16px;
   position: relative;
   line-height: 1;
-  top: -324x;
+  top: -34x;
 }
