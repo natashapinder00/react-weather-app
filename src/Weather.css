@@ -1,4 +1,8 @@
 .Weather {
+  background-image: url(images/icon4.png);
+  background-repeat: no-repeat;
+  background-attachment: inherit;
+  background-size: cover;
   border: 1px solid #dadde1;
   color: rgb(135, 135, 135);
   padding: 16px;
