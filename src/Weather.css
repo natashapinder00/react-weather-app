@@ -1,5 +1,5 @@
 .Weather {
-  background-image: url(images/icon4.png);
+  background-image: url(images/sunbackground.png);
   background-repeat: no-repeat;
   background-attachment: inherit;
   background-size: cover;
@@ -57,4 +57,20 @@
   color: rgb(33, 33, 33);
   position: fixed;
   line-height: 2;
+}
+
+.Weather-form-button {
+  background: #93c5e2;
+  box-shadow: none;
+  border-radius: 3px;
+  color: #93c5e2;
+  padding: 1px 20px;
+}
+
+.Weather-form-button:hover {
+  background: white;
+  box-shadow: none;
+  border-radius: 3px;
+  color: #93c5e2;
+  padding: 1px 20px;
 }

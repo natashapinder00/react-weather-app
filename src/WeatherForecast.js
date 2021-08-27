@@ -9,9 +9,8 @@ export default function WeatherForecast(props) {
 
 
 useEffect(() => {
- 
   setLoaded(false);
-   }, [props.coordinates]);
+}, [props.coordinates]);
 
   function handleResponse(response) {
     setForecast(response.data.daily);
@@ -41,7 +40,7 @@ useEffect(() => {
       </div>
     );
   } else {
-    let apiKey = "1de96fcfccc72dd6e18ea24ca14e99bd";
+    let apiKey = "d2b8a0db5e85065ca5e0d9c6fb59f04a";
     let longitude = props.coordinates.lon;
     let latitude = props.coordinates.lat;
     let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;

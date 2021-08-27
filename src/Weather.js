@@ -24,7 +24,7 @@ function handleResponse(response) {
 }
 
 function search() {  
-    const apiKey = "1de96fcfccc72dd6e18ea24ca14e99bd";
+    const apiKey = "d2b8a0db5e85065ca5e0d9c6fb59f04a";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
 }
@@ -44,7 +44,7 @@ function handleCityChange(event) {
 if (weatherData.ready) {
         return (  
         <div className="Weather">
-            <form onSubmit={handleSubmit}>
+           <form onSubmit={handleSubmit}>
                 <div className="row">
                 <div className="col-9">
                     
@@ -56,14 +56,18 @@ if (weatherData.ready) {
                     onChange={handleCityChange}
              />
              </div> 
+             
              <div className="col-3">
+                 <div className="Weather-form-button">
                  <input 
                  type="submit"
                  value="Search"
-                 className="btn btn-primary w-100"/>
+                 className="btn btn-form-button w-100"/>
 </div>
-    </div>    
+    </div>  
+      </div> 
       </form>
+     
 
 <WeatherInfo data={weatherData} />
 <WeatherForecast  coordinates={weatherData.coordinates}/>
