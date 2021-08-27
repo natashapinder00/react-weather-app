@@ -49,7 +49,6 @@ if (weatherData.ready) {
                 <div className="col-9">
                     
                     <input
-
                     type="search"
                     placeholder="Enter a city..."
                     className="Form-control"
@@ -60,14 +59,17 @@ if (weatherData.ready) {
              
              <div className="col-3">
                  <div className="Weather-form-button">
+
                  <input 
                  type="submit"
                  value="Search"
                  className="btn btn-form-button w-100"/>
-</div>
+
     </div>  
       </div> 
+      </div>
       </form>
+      
      
 
 <WeatherInfo data={weatherData} />

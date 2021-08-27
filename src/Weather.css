@@ -60,9 +60,12 @@
 }
 
 .Weather-form-button {
-  background: #23b7ed;
+  background: white;
+  border-color: #23b7ed;
+  border-radius: 3px;
 }
 
 .Weather-form-button:hover {
-  background-color: white;
+  background-color: #23b7ed;
+  color: white;
 }
