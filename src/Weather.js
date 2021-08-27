@@ -49,6 +49,7 @@ if (weatherData.ready) {
                 <div className="col-9">
                     
                     <input
+
                     type="search"
                     placeholder="Enter a city..."
                     className="Form-control"
